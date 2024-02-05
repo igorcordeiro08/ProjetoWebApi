@@ -74,3 +74,13 @@ C:\Users\Igor\Desktop\ProjetoWeb2\ProjetoWeb\obj\Debug\net8.0\scopedcss\bundle\P
 C:\Users\Igor\Desktop\ProjetoWeb2\ProjetoWeb\obj\Debug\net8.0\ProjetoWeb.csproj.CopyComplete
 C:\Users\Igor\Desktop\ProjetoWeb2\ProjetoWeb\obj\Debug\net8.0\ProjetoWeb.genruntimeconfig.cache
 C:\Users\Igor\Desktop\ProjetoWeb2\ProjetoWeb\obj\Debug\net8.0\ref\ProjetoWeb.dll
+C:\Workspace\C#\ProjetoWeb2\ProjetoWeb\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Workspace\C#\ProjetoWeb2\ProjetoWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Workspace\C#\ProjetoWeb2\ProjetoWeb\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Workspace\C#\ProjetoWeb2\ProjetoWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Workspace\C#\ProjetoWeb2\ProjetoWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Workspace\C#\ProjetoWeb2\ProjetoWeb\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Workspace\C#\ProjetoWeb2\ProjetoWeb\obj\Debug\net8.0\ProjetoWeb.sourcelink.json
+C:\Workspace\C#\ProjetoWeb2\ProjetoWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Workspace\C#\ProjetoWeb2\ProjetoWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Workspace\C#\ProjetoWeb2\ProjetoWeb\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll

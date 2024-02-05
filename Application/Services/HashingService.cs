@@ -1,27 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Domain.Options;
+using Microsoft.Extensions.Options;
+using System;
 using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Services;
+
 public interface IHashingService
 {
     string Hash(string password);
-    bool Verify(string password,string hashedPassword);
+    bool Verify(string password, string hashedPassword);
 }
+
 public class HashingService : IHashingService
 {
-    private readonly int SaltByteSize=24;
-    private readonly int HashByteSize=20;
-    private readonly string HashAlgorithm="SHA256";
-    private readonly int MinIteration=2000;
-    private readonly int MaxIteration=5000;
+    private readonly int SaltByteSize;
+    private readonly int HashByteSize;
+    private readonly string HashAlgorithm;
+    private readonly int MinIteration;
+    private readonly int MaxIteration;
+
     private const int IterationIndex = 0;
     private const int SaltIndex = 1;
     private const int Pbkdf2Index = 2;
-    string IHashingService.Hash(string password)
+
+    public HashingService(IOptions<PasswordHashOptions> options)
+    {
+        SaltByteSize = options.Value.SaltByteSize;
+        HashByteSize = options.Value.HashByteSize;
+        HashAlgorithm = options.Value.HashAlgorithm;
+        MinIteration = options.Value.MinIteration;
+        MaxIteration = options.Value.MaxIteration;
+    }
+
+    public string Hash(string password)
     {
         byte[] salt = RandomNumberGenerator.GetBytes(SaltByteSize);
         int iterations = Random.Shared.Next(MinIteration, MaxIteration);
@@ -32,7 +43,7 @@ public class HashingService : IHashingService
                Convert.ToBase64String(hash);
     }
 
-    bool IHashingService.Verify(string password, string hashedPassword)
+    public bool Verify(string password, string hashedPassword)
     {
         char[] delimiter = { ':' };
         var split = hashedPassword.Split(delimiter);

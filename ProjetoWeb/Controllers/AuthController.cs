@@ -1,12 +1,24 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Application.Services;
+using Domain.Requests;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ProjetoWeb.Controllers;
+namespace Web.Controllers;
 
 [Route("[controller]")]
 [ApiController]
 public class AuthController : ControllerBase
 {
-    public string? Email { get; set; }
-    public string? Password { get; set; }
+    private readonly IAuthService _authService;
+
+    public AuthController(IAuthService authService)
+    {
+        _authService = authService;
+    }
+
+    [HttpPost]
+    public IActionResult SignIn([FromBody] AuthRequest request)
+    {
+        var response = _authService.SignIn(request);
+        return Ok(response);
+    }
 }

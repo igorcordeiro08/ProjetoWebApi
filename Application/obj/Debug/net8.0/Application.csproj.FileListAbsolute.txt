@@ -49,3 +49,4 @@ C:\Users\Igor\Desktop\ProjetoWeb2\Application\bin\Debug\net8.0\Application.deps.
 C:\Users\Igor\Desktop\ProjetoWeb2\Application\bin\Debug\net8.0\Application.dll
 C:\Users\Igor\Desktop\ProjetoWeb2\Application\bin\Debug\net8.0\Application.pdb
 C:\Users\Igor\Desktop\ProjetoWeb2\Application\obj\Debug\net8.0\ref\Application.dll
+C:\Workspace\C#\ProjetoWeb2\Application\obj\Debug\net8.0\Application.sourcelink.json

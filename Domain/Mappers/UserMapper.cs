@@ -1,36 +1,33 @@
 ﻿using Domain.Entities;
 using Domain.Requests;
 using Domain.Responses;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Domain.Mappers
+namespace Domain.Mappers;
+
+public static class UserMapper
 {
-    public static class UserMapper
+    public static UserResponse ToResponse(User user) => new UserResponse
     {
-        public static UserResponse ToResponse(User user) => new UserResponse
-        {
-            Id = user.Id,
-            Name = user.Name,
-            Email = user.Email,
-            
-        };
-        public static User ToEntity(BaseUserRequest user) => new User
-        {
-            
-            Name = user.Name,
-            Email = user.Email,
-            Password = user.Password
-        };
-        public static User ToEntity(UpdateUserRequest user) => new User
-        {
-            Id = user.Id,
-            Name = user.Name,
-            Email = user.Email,
-            Password = user.Password
-        };
-    }
+        Id = user.Id,
+        Name = user.Name,
+        Email = user.Email,
+        Role = user.Role
+    };
+
+    public static User ToEntity(BaseUserRequest user) => new User
+    {
+        Name = user.Name,
+        Email = user.Email,
+        Password = user.Password,
+        Role = user.Role
+    };
+
+    public static User ToEntity(UpdateUserRequest user) => new User
+    {
+        Id = user.Id,
+        Name = user.Name,
+        Email = user.Email,
+        Password = user.Password,
+        Role = user.Role
+    };
 }

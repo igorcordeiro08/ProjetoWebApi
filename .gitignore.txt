@@ -1,0 +1,2 @@
+﻿.vs/
+.\ProjetoWeb\.vs\Projeto\FileContentIndex\37478eb7-4413-4c64-af48-393e2728776f.vsidx

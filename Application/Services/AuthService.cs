@@ -1,49 +1,47 @@
 ﻿using Domain.Exceptions;
+using Domain.Requests;
 using Domain.Responses;
-using Domain.Validators;
 using Infrastructure.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Services;
 
 public interface IAuthService
 {
-    string SignIn(AuthRequest request);
+    AuthResponse SignIn(AuthRequest request);
 }
 
 public class AuthService : IAuthService
 {
-
-    private readonly IUserRepository _repository;
-    private readonly IHashingService _hashingService;
     private readonly IJwtService _jwtService;
-    private const string InvalidLoginMessage = "Login is invalid";
+    private readonly IHashingService _hashingService;
+    private readonly IUserRepository _userRepository;
 
-    public AuthService(IUserRepository repository,IHashingService hashingService, IJwtService jwtService)
+    private const string InvalidLoginMessage = "Login is invalid!";
+
+    public AuthService(IUserRepository userRepository, IHashingService hashingService,
+        IJwtService jwtService)
     {
-        _repository = repository;
+        _jwtService = jwtService;
         _hashingService = hashingService;
-        _jwtService= jwtService;
+        _userRepository = userRepository;
     }
-    public string SignIn(AuthRequest request)
+
+    public AuthResponse SignIn(AuthRequest request)
     {
-        var user = _repository.FindByEmail(request.Email!);
+        var user = _userRepository.FindByEmail(request.Email!);
+
         if (user is null)
-            throw new UnauthorizedException(InvalidLoginMessage);
+            throw new UnathorizedException(InvalidLoginMessage);
 
-        bool passwordIsValid = _hashingService.Verify(request.Password!, user.Password!);
+        var isPasswordValid = _hashingService.Verify(request.Password!, user.Password!);
 
-        if (!passwordIsValid)
-            throw new UnauthorizedException(InvalidLoginMessage);
+        if (!isPasswordValid)
+            throw new UnathorizedException(InvalidLoginMessage);
+
         var jwt = _jwtService.CreateToken(user);
         return new AuthResponse
         {
             Token = jwt,
-    };
+        };
     }
 }

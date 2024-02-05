@@ -1,43 +1,44 @@
-﻿using Domain.Entities;
-using Domain.Requests;
+﻿using Domain.Requests;
 using Domain.Responses;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Domain.Validators;
 
-public class UserValidator: IValidator<BaseUserRequest>
+public class UserValidator : IValidator<BaseUserRequest>
 {
-    public List<ErrorMessageResponse> Validate(BaseUserRequest user)
+    public List<ErrorMessageResponse> Validate(BaseUserRequest car)
     {
-        var errors= new List<ErrorMessageResponse>();
-        if(string.IsNullOrEmpty(user.Name))
-        {
+        var errors = new List<ErrorMessageResponse>();
+
+        if (string.IsNullOrEmpty(car.Name))
             errors.Add(new ErrorMessageResponse
             {
                 Field = "Name",
-                Message= "Field is Required"
-            });                
-        }
-        if (string.IsNullOrEmpty(user.Email))
-        {
+                Message = "Field is required!"
+            });
+
+        if (string.IsNullOrEmpty(car.Email))
             errors.Add(new ErrorMessageResponse
             {
                 Field = "Email",
-                Message = "Field is Required"
+                Message = "Field is required!"
             });
-        }
-        if (string.IsNullOrEmpty(user.Password))
-        {
+
+        if (string.IsNullOrEmpty(car.Password))
             errors.Add(new ErrorMessageResponse
             {
                 Field = "Password",
-                Message = "Field is Required"
+                Message = "Field is required!"
             });
-        }
+
+        if (string.IsNullOrEmpty(car.Role))
+            errors.Add(new ErrorMessageResponse
+            {
+                Field = "Role",
+                Message = "Field is required!"
+            });
+
+
         return errors;
     }
 }

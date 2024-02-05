@@ -1,18 +1,15 @@
 ﻿using Domain.Responses;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.Json;
 
 namespace Domain.Exceptions;
 
-public class UnauthorizedException: Exception
+public class UnathorizedException : Exception, ICustomException
 {
-   public UnauthorizedException(string message) : base(message)
+    public UnathorizedException(string message) : base(message)
     {
-
     }
-    public int StatusCode { get => 40; }
+    public int StatusCode { get => 401; }
 
+    public string GetResponse() => JsonSerializer.Serialize(new ErrorResponse(base.Message));
 }

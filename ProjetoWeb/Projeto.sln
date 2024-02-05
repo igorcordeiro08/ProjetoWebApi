@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "..\Infras
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "..\Domain\Domain.csproj", "{9BCF56C5-63AC-4698-BE49-802F8FBCB8D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoWeb", "..\ProjetoWeb\ProjetoWeb.csproj", "{73AE0955-C70C-47ED-9465-5137AE639823}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetoWeb", "ProjetoWeb.csproj", "{73AE0955-C70C-47ED-9465-5137AE639823}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

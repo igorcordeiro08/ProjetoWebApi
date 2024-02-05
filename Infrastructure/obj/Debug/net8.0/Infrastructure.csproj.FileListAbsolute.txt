@@ -43,3 +43,4 @@ C:\Users\Igor\Desktop\ProjetoWeb2\Infrastructure\bin\Debug\net8.0\Infrastructure
 C:\Users\Igor\Desktop\ProjetoWeb2\Infrastructure\bin\Debug\net8.0\Infrastructure.dll
 C:\Users\Igor\Desktop\ProjetoWeb2\Infrastructure\bin\Debug\net8.0\Infrastructure.pdb
 C:\Users\Igor\Desktop\ProjetoWeb2\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll
+C:\Workspace\C#\ProjetoWeb2\Infrastructure\obj\Debug\net8.0\Infrastructure.sourcelink.json

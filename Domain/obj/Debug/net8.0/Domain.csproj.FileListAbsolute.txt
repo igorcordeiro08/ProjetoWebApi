@@ -31,3 +31,4 @@ C:\Users\Igor\Desktop\ProjetoWeb2\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInp
 C:\Users\Igor\Desktop\ProjetoWeb2\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
 C:\Users\Igor\Desktop\ProjetoWeb2\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
 C:\Users\Igor\Desktop\ProjetoWeb2\Domain\obj\Debug\net8.0\ref\Domain.dll
+C:\Workspace\C#\ProjetoWeb2\Domain\obj\Debug\net8.0\Domain.sourcelink.json
